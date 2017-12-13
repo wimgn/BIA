@@ -1,5 +1,6 @@
 package be.eaict.bia;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        getSupportActionBar().setTitle("BIA");
 
         DatabaseReference myRef = database.getReference("Cafes");
 
@@ -56,8 +59,12 @@ public class MainActivity extends AppCompatActivity {
         Bier b = new Bier("Stella",1.60);
         c.AddBier(b);
 
-        //blablabla
-
         myRef.push().setValue(c);
+    }
+
+    public void OpenSearch(View v) {
+        Intent i = new Intent(MainActivity.this,SearchActivity.class);
+
+        startActivity(i);
     }
 }
