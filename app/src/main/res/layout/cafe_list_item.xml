@@ -12,7 +12,7 @@
         android:paddingBottom="10dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:id="@+id/Naam"></TextView>
+        android:id="@+id/cafe_list_naam"></TextView>
 
     <TextView
         android:layout_height="wrap_content"
@@ -22,6 +22,6 @@
         android:paddingBottom="10dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:id="@+id/Detail"></TextView>
+        android:id="@+id/cafe_list_detail"></TextView>
 
 </LinearLayout>
