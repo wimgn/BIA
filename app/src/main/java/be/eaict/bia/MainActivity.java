@@ -56,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
         Bier b = new Bier("Stella",1.60);
         c.AddBier(b);
 
+        //blablabla
+
         myRef.push().setValue(c);
     }
 }
