@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "163877854468",
+    "firebase_url": "https://beer-in-antwerp.firebaseio.com",
+    "project_id": "beer-in-antwerp",
+    "storage_bucket": "beer-in-antwerp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:163877854468:android:21650811851bf223",
+        "android_client_info": {
+          "package_name": "be.eaict.bia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "163877854468-s86dqkd69e4b7dtk3o9joki8d91eirab.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCI_Lw8evPE4ZSRBW3M_7Qb06W31mFZ9iY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
