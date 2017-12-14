@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -27,7 +28,7 @@ public class CafeActivity extends AppCompatActivity {
 
         final String TAG = "Database interaction: ";
 
-        List<Cafe> afspraken = new ArrayList<Cafe>();
+        List<Cafe> cafes = new ArrayList<Cafe>();
 
         // Read from the database
         myRef.addValueEventListener(new ValueEventListener() {
@@ -35,11 +36,15 @@ public class CafeActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
-                List<Cafe> afspraken = new ArrayList<Cafe>();
+                List<Bier> bieren = new ArrayList<Bier>();
                 for (DataSnapshot cafe: dataSnapshot.getChildren()) {
                     Cafe value = cafe.getValue(Cafe.class);
                     //Log.d(TAG, "Value is: " + value.Naam);
-                    afspraken.add(value);
+                    if (value.getID() == getIntent().getIntExtra("cafeID",-1)) {
+                        ((TextView)findViewById(R.id.Naam)).setText(value.Naam);
+                        ((TextView)findViewById(R.id.Rating)).setText("Rating: " + value.Rating);
+
+                    }
                 }
                 //((ListView) findViewById(R.id.cafe_list_view)).setAdapter(new CafeAdapter(SearchActivity.this,afspraken));
             }

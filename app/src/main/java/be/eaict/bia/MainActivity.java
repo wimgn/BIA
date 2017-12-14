@@ -60,12 +60,16 @@ public class MainActivity extends AppCompatActivity {
 
         DatabaseReference myRef = database.getReference("Cafes");
 
-        Cafe c = new Cafe("De Kroeg", 4.5);
+        for (int i = 0; i < 5; i++) {
+            Cafe c = new Cafe(i,"De Kroeg " + i, 4.5);
 
-        Bier b = new Bier("Stella",1.60);
-        c.AddBier(b);
+            Bier b = new Bier("Stella",1.60);
+            c.AddBier(b);
 
-        myRef.push().setValue(c);
+            myRef.push().setValue(c);
+        }
+
+
     }
 
     public void OpenSearch(View v) {

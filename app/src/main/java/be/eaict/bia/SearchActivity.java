@@ -32,18 +32,17 @@ public class SearchActivity extends AppCompatActivity {
 
         final String TAG = "Database interaction: ";
 
-        List<Cafe> afspraken = new ArrayList<Cafe>();
+        final List<Cafe> cafes = new ArrayList<Cafe>();
 
         ListView cafeListView = (ListView) findViewById(R.id.cafe_list_view);
-        cafeListView.setAdapter(new CafeAdapter(this, afspraken));
+        cafeListView.setAdapter(new CafeAdapter(this, cafes));
         cafeListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                /*Intent i = new Intent(MainActivity.this, DetailActivity.class);
-                Appointment afspraak = afspraken.get(position);
-                i.putExtra("afspraakID",afspraak.getId());
-                startActivity(i);*/
-                //TODO door gaan naar cafe detail
+                Intent i = new Intent(SearchActivity.this, CafeActivity.class);
+                Cafe c = (Cafe)adapterView.getItemAtPosition(position);
+                i.putExtra("cafeID",c.getID());
+                startActivity(i);
             }
         });
 
@@ -53,13 +52,13 @@ public class SearchActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
-                List<Cafe> afspraken = new ArrayList<Cafe>();
+                List<Cafe> c = new ArrayList<Cafe>();
                 for (DataSnapshot cafe: dataSnapshot.getChildren()) {
                     Cafe value = cafe.getValue(Cafe.class);
                     Log.d(TAG, "Value is: " + value.Naam);
-                    afspraken.add(value);
+                    c.add(value);
                 }
-                ((ListView) findViewById(R.id.cafe_list_view)).setAdapter(new CafeAdapter(SearchActivity.this,afspraken));
+                ((ListView) findViewById(R.id.cafe_list_view)).setAdapter(new CafeAdapter(SearchActivity.this,c));
             }
 
             @Override
