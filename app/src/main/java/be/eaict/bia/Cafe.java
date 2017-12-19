@@ -1,5 +1,7 @@
 package be.eaict.bia;
 
+import android.nfc.tech.NfcA;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,21 +16,30 @@ public class Cafe {
     }
 
     public Cafe(int id, String n, Double r) {
-        ID = id;
-        Naam = n;
-        Rating = r;
+        id = id;
+        name = n;
+        rating = r;
     }
 
-    private int ID;
-    public String Naam;
-    public Double Rating;
-    public List<Bier> _lijst = new ArrayList<Bier>();
+    private int id;
+    private String name;
+    private Double rating;
+
+    public List<Bier> Lijst = new ArrayList<Bier>();
 
     public void AddBier(Bier b) {
-        _lijst.add(b);
+        Lijst.add(b);
     }
 
     public int getID(){
-        return ID;
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Double getRating() {
+        return rating;
     }
 }

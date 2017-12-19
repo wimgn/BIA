@@ -7,9 +7,13 @@
     tools:context="be.eaict.bia.SearchActivity"
     android:orientation="vertical">
 
-    <EditText
+    <SearchView
+        android:id="@+id/search_view_cafe"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></EditText>
+        android:layout_height="wrap_content"
+        android:iconifiedByDefault="false"
+        android:padding="2dp"
+        android:queryHint="Search...." />
 
     <ListView
         android:layout_width="match_parent"

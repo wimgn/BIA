@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.SearchView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -17,9 +18,10 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SearchActivity extends AppCompatActivity {
+public class SearchActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
+    CafeAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +37,8 @@ public class SearchActivity extends AppCompatActivity {
         final List<Cafe> cafes = new ArrayList<Cafe>();
 
         ListView cafeListView = (ListView) findViewById(R.id.cafe_list_view);
-        cafeListView.setAdapter(new CafeAdapter(this, cafes));
+        adapter = new CafeAdapter(this, cafes);
+        cafeListView.setAdapter(adapter);
         cafeListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
@@ -55,10 +58,13 @@ public class SearchActivity extends AppCompatActivity {
                 List<Cafe> c = new ArrayList<Cafe>();
                 for (DataSnapshot cafe: dataSnapshot.getChildren()) {
                     Cafe value = cafe.getValue(Cafe.class);
-                    Log.d(TAG, "Value is: " + value.Naam);
+                    Log.d(TAG, "Value is: " + value.getName());
                     c.add(value);
                 }
-                ((ListView) findViewById(R.id.cafe_list_view)).setAdapter(new CafeAdapter(SearchActivity.this,c));
+
+                adapter = new CafeAdapter(SearchActivity.this,c);
+                ((ListView) findViewById(R.id.cafe_list_view)).setAdapter(adapter);
+                ((SearchView) findViewById(R.id.search_view_cafe)).setOnQueryTextListener(SearchActivity.this);
             }
 
             @Override
@@ -68,5 +74,19 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
 
+        ((SearchView) findViewById(R.id.search_view_cafe)).setOnQueryTextListener(SearchActivity.this);
+
+    }
+
+    @Override
+    public boolean onQueryTextSubmit(String s) {
+        adapter.getFilter().filter(s.trim());
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String s) {
+        adapter.getFilter().filter(s.trim());
+        return false;
     }
 }

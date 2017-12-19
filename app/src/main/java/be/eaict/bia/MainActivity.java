@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
                 // whenever data at this location is updated.
                 for (DataSnapshot cafe: dataSnapshot.getChildren()) {
                     Cafe value = cafe.getValue(Cafe.class);
-                    Log.d(TAG, "Value is: " + value.Naam);
+                    Log.d(TAG, "Value is: " + value.getName());
                 }
 
             }

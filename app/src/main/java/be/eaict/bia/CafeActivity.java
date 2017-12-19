@@ -41,8 +41,8 @@ public class CafeActivity extends AppCompatActivity {
                     Cafe value = cafe.getValue(Cafe.class);
                     //Log.d(TAG, "Value is: " + value.Naam);
                     if (value.getID() == getIntent().getIntExtra("cafeID",-1)) {
-                        ((TextView)findViewById(R.id.Naam)).setText(value.Naam);
-                        ((TextView)findViewById(R.id.Rating)).setText("Rating: " + value.Rating);
+                        ((TextView)findViewById(R.id.Naam)).setText(value.getName());
+                        ((TextView)findViewById(R.id.Rating)).setText("Rating: " + value.getRating());
 
                     }
                 }
