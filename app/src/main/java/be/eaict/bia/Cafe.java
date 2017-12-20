@@ -16,7 +16,7 @@ public class Cafe {
     }
 
     public Cafe(int id, String n, Double r) {
-        id = id;
+        this.id = id;
         name = n;
         rating = r;
     }
