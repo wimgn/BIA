@@ -4,25 +4,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="be.eaict.bia.MainActivity">
+    tools:context="be.eaict.bia.MainActivity"
+    android:orientation="vertical">
 
-    <Button
+    <LinearLayout
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="Push"
-        android:onClick="PushToFirebase">
-    </Button>
+        android:layout_width="wrap_content">
 
-    <Button
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="Search"
-        android:onClick="OpenSearch">
-    </Button>
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Push"
+            android:onClick="PushToFirebase">
+        </Button>
 
-    <TextView
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Search"
+            android:onClick="OpenSearch">
+        </Button>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/main_test"></TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:id="@+id/main_test"></TextView>
+        android:layout_width="wrap_content">
+
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Check Key Of Last Cafe"
+            android:onClick="KeyCheck">
+        </Button>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/main_keyTest"></TextView>
+    </LinearLayout>
+
 
 </LinearLayout>

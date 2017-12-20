@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     List<Cafe> l = new ArrayList<Cafe>();
     int nextID = 0;
+    List<String> currentKeys = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
                 for (DataSnapshot cafe: dataSnapshot.getChildren()) {
                     Cafe value = cafe.getValue(Cafe.class);
                     Log.d(TAG, "Value is: " + value.getName());
+                    //Log.d(TAG, cafe.getKey());
                     l.add(value);
                 }
                 int temp = 0;
@@ -87,5 +89,42 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(MainActivity.this,SearchActivity.class);
 
         startActivity(i);
+    }
+
+    public void KeyCheck(View v) {
+        DatabaseReference myRef = database.getReference("Cafes");
+
+        final String TAG = "Key checks: ";
+
+        myRef.addListenerForSingleValueEvent(
+                new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                        currentKeys = new ArrayList<String>();
+
+                        for (DataSnapshot cafe: dataSnapshot.getChildren()) {
+                            Cafe value = cafe.getValue(Cafe.class);
+                            //Log.d(TAG,cafe.getKey());
+                            currentKeys.add(cafe.getKey());
+                        }
+
+                        TextView txtKey = ((TextView)findViewById(R.id.main_keyTest));
+                        if(currentKeys.size() > 0) {
+                            txtKey.setText(currentKeys.get(currentKeys.size()-1));
+                        } else {
+                            txtKey.setText("");
+                        }
+
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        //handle databaseError
+                        Log.w(TAG, "Failed to read value.", databaseError.toException());
+                    }
+                });
+
+
     }
 }
