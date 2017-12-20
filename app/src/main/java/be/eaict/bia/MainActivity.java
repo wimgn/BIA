@@ -23,10 +23,7 @@ public class MainActivity extends AppCompatActivity {
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     List<Cafe> l = new ArrayList<Cafe>();
     int nextID = 0;
-<<<<<<< HEAD
     List<String> currentKeys = new ArrayList<String>();
-=======
->>>>>>> master
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,10 +46,7 @@ public class MainActivity extends AppCompatActivity {
                 for (DataSnapshot cafe: dataSnapshot.getChildren()) {
                     Cafe value = cafe.getValue(Cafe.class);
                     Log.d(TAG, "Value is: " + value.getName());
-<<<<<<< HEAD
                     //Log.d(TAG, cafe.getKey());
-=======
->>>>>>> master
                     l.add(value);
                 }
                 int temp = 0;
