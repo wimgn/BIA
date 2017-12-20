@@ -20,4 +20,9 @@
         android:onClick="OpenSearch">
     </Button>
 
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/main_test"></TextView>
+
 </LinearLayout>

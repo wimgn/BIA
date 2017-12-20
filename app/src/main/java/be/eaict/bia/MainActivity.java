@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -20,6 +21,8 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
+    List<Cafe> l = new ArrayList<Cafe>();
+    int nextID = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,12 +40,19 @@ public class MainActivity extends AppCompatActivity {
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
+                l = new ArrayList<Cafe>();
+
                 for (DataSnapshot cafe: dataSnapshot.getChildren()) {
                     Cafe value = cafe.getValue(Cafe.class);
                     Log.d(TAG, "Value is: " + value.getName());
+                    l.add(value);
                 }
+                int temp = 0;
+                if(l.size() > 0) {
+                    temp = l.get(l.size()-1).getID();
+                    nextID = temp + 1;
+                }
+                ((TextView)findViewById(R.id.main_test)).setText(Integer.toString(nextID));
 
             }
 
@@ -61,7 +71,8 @@ public class MainActivity extends AppCompatActivity {
         DatabaseReference myRef = database.getReference("Cafes");
 
         for (int i = 0; i < 5; i++) {
-            Cafe c = new Cafe(i,"De Kroeg " + i, 4.5);
+            int temp = nextID + i;
+            Cafe c = new Cafe(temp,"De Kroeg " + temp, 4.5);
 
             Bier b = new Bier("Stella",1.60);
             c.AddBier(b);
