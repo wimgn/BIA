@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="be.eaict.bia.SearchActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/backBeerTap1opacity"
+    >
 
     <SearchView
         android:id="@+id/search_view_cafe"

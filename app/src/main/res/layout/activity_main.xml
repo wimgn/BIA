@@ -5,65 +5,68 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="be.eaict.bia.MainActivity"
-    android:orientation="vertical">
-
-    <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content">
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/backBeerTap1"
+    >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:text="BIA"
+            android:textColor="@color/colorAccent"
+            android:textSize="36dp"
+            android:typeface="serif"
+            />
 
         <Button
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:text="Push"
-            android:onClick="PushToFirebase">
-        </Button>
-
-        <Button
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
+            android:layout_width="180dp"
             android:text="Search"
-            android:onClick="OpenSearch">
-        </Button>
-
-        <TextView
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:id="@+id/main_test"></TextView>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content">
-
+            android:onClick="OpenSearch"
+            android:layout_weight="1"
+            android:alpha="0.8"
+            />
         <Button
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:text="Check Key Of Last Cafe"
-            android:onClick="KeyCheck">
-        </Button>
+            android:layout_width="180dp"
+            android:text="Participating cafes"
+            android:layout_weight="1"
+            android:alpha="0.8"
+            />
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="180dp"
+            android:text="Login"
+            android:layout_weight="1"
+            android:alpha="0.8"
+            />
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="180dp"
+            android:text="Register"
+            android:layout_weight="1"
+            android:alpha="0.8"
+            />
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="180dp"
+            android:text="Options"
+            android:layout_weight="1"
+            android:alpha="0.8"
+            />
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="180dp"
+            android:text="Help"
+            android:layout_weight="1"
+            android:alpha="0.8"
+            />
 
         <TextView
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:id="@+id/main_keyTest"></TextView>
-    </LinearLayout>
-
-
-    <TextView
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:id="@+id/main_test"></TextView>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="check maps"
-            android:onClick="MapsCheck"/>
-    </LinearLayout>
+            android:layout_weight="6"
+            />
 
 </LinearLayout>
