@@ -75,9 +75,43 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < 5; i++) {
             int temp = nextID + i;
             Cafe c = new Cafe(temp,"De Kroeg " + temp, 4.5);
+            l.add(new Cafe(17,"Bla bla",4.5));
+            /*l.add(new Cafe(0,"Sals Cafe",3.8));
+            l.add(new Cafe(1,"De Kroeg",4.2));
+            l.add(new Cafe(2,"De Prof",3.7));
+            l.add(new Cafe(3,"Barbier",4.3));
+            l.add(new Cafe(4,"De Kat",4.5));
+            l.add(new Cafe(5,"'t Klokske",4.1));
+            l.add(new Cafe(6,"'t Bolleke",4.5));
+            l.add(new Cafe(7,"Stoop",4.0));
+            l.add(new Cafe(8,"Den Engel",4.3));
+            l.add(new Cafe(9,"Soho",4.0));
+            l.add(new Cafe(10,"Hopper",3.8));
+            l.add(new Cafe(11,"Zuidcafe",3.7));
+            l.add(new Cafe(12,"Revista",4.2));
+            l.add(new Cafe(13,"Nick's Cafe",4.2));
+            l.add(new Cafe(14,"Cafe Local",3.6));
+            l.add(new Cafe(15,"De Baron",4.1));
+            l.add(new Cafe(16,"De Nieuwe Linde",4.2));
+            */
 
-            Bier b = new Bier("Stella",1.60);
-            c.AddBier(b);
+            Bier Stella = new Bier("Stella",2.5);
+            Bier Jupiler = new Bier("Jupiler",1.6);
+            Bier Leffe_Blond = new Bier("Leffe Blond",3.5);
+            Bier Tripel_Karmeliet = new Bier("Tripel Karmeliet",3.5);
+            Bier Leffe_Donker = new Bier("Leffe Donker",3.5);
+            Bier Westmalle_Dubbel = new Bier("Westmalle Dubbel",3.5);
+            Bier Westmalle_Tripel = new Bier("Westmalle Tripel",3.5);
+            Bier Rochefort = new Bier("Rochefort",3.5);
+            Bier Chimay_Rood = new Bier("Chimay Rood",3.5);
+            Bier Chimay_Blauw = new Bier("Chimay Blauw",3.5);
+            Bier Duvel = new Bier("Duvel",3.5);
+            Bier Kasteelbier_Donker = new Bier("Kasteelbier Donker",3.5);
+
+            c.AddBier(Stella);
+            c.AddBier(Jupiler);
+            c.AddBier(Leffe_Blond);
+            c.AddBier(Leffe_Donker);
 
             myRef.push().setValue(c);
         }
