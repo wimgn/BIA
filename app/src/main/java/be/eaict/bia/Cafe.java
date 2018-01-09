@@ -19,15 +19,15 @@ public class Cafe {
         this.id = id;
         name = n;
         rating = r;
-        Latitude = Lan;
-        Longitude = Lon;
+        latitude = Lan;
+        longitude = Lon;
     }
 
     private int id;
     private String name;
     private Double rating;
-    private double Latitude;
-    private double Longitude;
+    private double latitude;
+    private double longitude;
 
     public List<Bier> Lijst = new ArrayList<Bier>();
 
@@ -47,7 +47,7 @@ public class Cafe {
         return rating;
     }
 
-    public  Double getLatitude(){return Latitude;}
+    public  Double getLatitude(){return latitude;}
 
-    public  Double getLongitude(){return  Longitude;}
+    public  Double getLongitude(){return  longitude;}
 }

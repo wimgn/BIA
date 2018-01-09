@@ -22,6 +22,7 @@ import static be.eaict.bia.R.styleable.View;
 public class CafeActivity extends AppCompatActivity {
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
+    Double Lat,Lon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +48,8 @@ public class CafeActivity extends AppCompatActivity {
                     if (value.getID() == getIntent().getIntExtra("cafeID",-1)) {
                         ((TextView)findViewById(R.id.Naam)).setText(value.getName());
                         ((TextView)findViewById(R.id.Rating)).setText("Rating: " + value.getRating());
-
+                        Lat = value.getLatitude();
+                        Lon = value.getLongitude();
                     }
                 }
                 //((ListView) findViewById(R.id.cafe_list_view)).setAdapter(new CafeAdapter(SearchActivity.this,afspraken));
@@ -58,12 +60,18 @@ public class CafeActivity extends AppCompatActivity {
                 // Failed to read value
                 Log.w(TAG, "Failed to read value.", error.toException());
             }
+
+
         });
     }
-
     public void OpenMaps(View v)
     {
         Intent i = new Intent(CafeActivity.this,MapsActivity.class);
+        Bundle b = new Bundle();
+        b.putDouble("Latitude",Lat);
+        b.putDouble("Longitude",Lon);
+        i.putExtras(b);
         startActivity(i);
     }
+
 }

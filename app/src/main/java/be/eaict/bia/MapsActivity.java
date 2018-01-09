@@ -53,6 +53,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     Marker mCurrLocationMarker;
     LocationRequest mLocationRequest;
     double Latitude,Longitude;
+    double LatitudeDest,LongitudeDest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -111,6 +112,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
       //  LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
         Latitude = location.getLatitude();
         Longitude = location.getLongitude();
+        Bundle b = getIntent().getExtras();
+        LatitudeDest = b.getDouble("Latitude");
+        LongitudeDest = b.getDouble("Longitude");
        // MarkerOptions markerOptions = new MarkerOptions();
        // markerOptions.position(latLng);
        // markerOptions.title("Current Position");
@@ -119,7 +123,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
         LatLng locatie = new LatLng(location.getLatitude(),location.getLongitude());
-        LatLng de_Kroeg = new LatLng(51.219262,4.401123);
+        LatLng de_Kroeg = new LatLng(LatitudeDest,LongitudeDest);
 
         mMap.addMarker(new MarkerOptions().position(locatie).title("I'm Here"));
         mMap.addMarker(new MarkerOptions().position(de_Kroeg).title("cafe"));
