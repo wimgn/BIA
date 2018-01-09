@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context="be.eaict.bia.SearchActivity"
     android:orientation="vertical"
-    android:background="@drawable/backbeertap1opacity"
+    android:background="@drawable/donkerachtergrond"
     >
 
     <SearchView
@@ -15,7 +15,9 @@
         android:layout_height="wrap_content"
         android:iconifiedByDefault="false"
         android:padding="2dp"
-        android:queryHint="Search...." />
+        android:queryHint="Search...."
+
+        />
 
     <ListView
         android:layout_width="match_parent"

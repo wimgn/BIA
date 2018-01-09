@@ -54,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
                     temp = l.get(l.size()-1).getID();
                     nextID = temp + 1;
                 }
-                //((TextView)findViewById(R.id.main_test)).setText(Integer.toString(nextID));
 
             }
 
@@ -75,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < 5; i++) {
             int temp = nextID + i;
             Cafe c = new Cafe(temp,"De Kroeg " + temp, 4.5);
-            l.add(new Cafe(17,"Bla bla",4.5));
             /*l.add(new Cafe(0,"Sals Cafe",3.8));
             l.add(new Cafe(1,"De Kroeg",4.2));
             l.add(new Cafe(2,"De Prof",3.7));
