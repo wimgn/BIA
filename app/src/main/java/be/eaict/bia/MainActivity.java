@@ -91,6 +91,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void MapsCheck(View v)
+    {
+        Intent i = new Intent(MainActivity.this,MapsActivity.class);
+        startActivity(i);
+    }
+
     public void KeyCheck(View v) {
         DatabaseReference myRef = database.getReference("Cafes");
 

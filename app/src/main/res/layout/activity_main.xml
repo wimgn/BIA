@@ -55,4 +55,15 @@
         android:layout_width="wrap_content"
         android:id="@+id/main_test"></TextView>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="check maps"
+            android:onClick="MapsCheck"/>
+    </LinearLayout>
+
 </LinearLayout>
