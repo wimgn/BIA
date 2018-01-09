@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                     temp = l.get(l.size()-1).getID();
                     nextID = temp + 1;
                 }
-                ((TextView)findViewById(R.id.main_test)).setText(Integer.toString(nextID));
+                //((TextView)findViewById(R.id.main_test)).setText(Integer.toString(nextID));
 
             }
 
@@ -148,14 +148,6 @@ public class MainActivity extends AppCompatActivity {
                             //Log.d(TAG,cafe.getKey());
                             currentKeys.add(cafe.getKey());
                         }
-
-                        TextView txtKey = ((TextView)findViewById(R.id.main_keyTest));
-                        if(currentKeys.size() > 0) {
-                            txtKey.setText(currentKeys.get(currentKeys.size()-1));
-                        } else {
-                            txtKey.setText("");
-                        }
-
                     }
 
                     @Override
