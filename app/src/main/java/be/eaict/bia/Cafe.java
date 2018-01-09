@@ -15,15 +15,19 @@ public class Cafe {
 
     }
 
-    public Cafe(int id, String n, Double r) {
+    public Cafe(int id, String n, Double r, Double Lan, Double Lon) {
         this.id = id;
         name = n;
         rating = r;
+        Latitude = Lan;
+        Longitude = Lon;
     }
 
     private int id;
     private String name;
     private Double rating;
+    private double Latitude;
+    private double Longitude;
 
     public List<Bier> Lijst = new ArrayList<Bier>();
 
@@ -42,4 +46,8 @@ public class Cafe {
     public Double getRating() {
         return rating;
     }
+
+    public  Double getLatitude(){return Latitude;}
+
+    public  Double getLongitude(){return  Longitude;}
 }

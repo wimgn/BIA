@@ -1,8 +1,10 @@
 package be.eaict.bia;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -14,6 +16,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static be.eaict.bia.R.styleable.View;
 
 public class CafeActivity extends AppCompatActivity {
 
@@ -55,6 +59,11 @@ public class CafeActivity extends AppCompatActivity {
                 Log.w(TAG, "Failed to read value.", error.toException());
             }
         });
+    }
 
+    public void OpenMaps(View v)
+    {
+        Intent i = new Intent(CafeActivity.this,MapsActivity.class);
+        startActivity(i);
     }
 }

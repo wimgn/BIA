@@ -31,6 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_width="180dp"
             android:text="Participating cafes"
+            android:onClick="push"
             android:layout_weight="1"
             android:alpha="0.8"
             />

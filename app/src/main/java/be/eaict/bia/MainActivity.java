@@ -66,32 +66,34 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void PushToFirebase(View v) {
+    public void push(View v) {
         // Write a message to the database
 
         DatabaseReference myRef = database.getReference("Cafes");
 
         for (int i = 0; i < 5; i++) {
             int temp = nextID + i;
-            Cafe c = new Cafe(temp,"De Kroeg " + temp, 4.5);
-            /*l.add(new Cafe(0,"Sals Cafe",3.8));
-            l.add(new Cafe(1,"De Kroeg",4.2));
-            l.add(new Cafe(2,"De Prof",3.7));
-            l.add(new Cafe(3,"Barbier",4.3));
-            l.add(new Cafe(4,"De Kat",4.5));
-            l.add(new Cafe(5,"'t Klokske",4.1));
-            l.add(new Cafe(6,"'t Bolleke",4.5));
-            l.add(new Cafe(7,"Stoop",4.0));
-            l.add(new Cafe(8,"Den Engel",4.3));
-            l.add(new Cafe(9,"Soho",4.0));
-            l.add(new Cafe(10,"Hopper",3.8));
-            l.add(new Cafe(11,"Zuidcafe",3.7));
-            l.add(new Cafe(12,"Revista",4.2));
-            l.add(new Cafe(13,"Nick's Cafe",4.2));
-            l.add(new Cafe(14,"Cafe Local",3.6));
-            l.add(new Cafe(15,"De Baron",4.1));
-            l.add(new Cafe(16,"De Nieuwe Linde",4.2));
-            */
+            Cafe c = new Cafe(temp,"De Kroeg " + temp, 4.5,51.219262,4.401123);
+
+           // l.add(new Cafe(17,"Bla bla",4.5));
+            l.add(new Cafe(0,"Sals Cafe",3.8,51.21982,4.401116));  //Lat = 51.219182 Lon = 4.401116
+            l.add(new Cafe(1,"De Kroeg",4.2,51.219262,4.401123));
+            l.add(new Cafe(2,"De Prof",3.7,51.223632,4.411556));      //Lat = 51.223632 Lon = 4,411556
+            l.add(new Cafe(3,"Barbier",4.3,51.223765,4.407107));      //Lat = 51.223765 Lon = 4.407107
+            l.add(new Cafe(4,"De Kat",4.5,51.221494,4.403621));       //Lat = 51.221494 Lon = 4.403621
+            l.add(new Cafe(5,"'t Klokske",4.1,51.219796,4.401689));   //Lat = 51.219796 Lon = 4.401689
+            l.add(new Cafe(6,"'t Bolleke",4.5,51.219538,4.401099));   //Lat = 51.219538 Lon = 4.401099
+            l.add(new Cafe(7,"Stoop",4.0,51.219598,4.401949));        //Lat = 51.219598 Lon = 4.401949
+            l.add(new Cafe(8,"Den Engel",4.3,51.221634,4.399603));    //Lat = 51.221634 Lon = 4.399603
+            l.add(new Cafe(9,"Soho",4.0,51.217796,4.394916));         //Lat = 51.217796 Lon = 4.394916
+            l.add(new Cafe(10,"Hopper",3.8,51.208311,4.392332));      //Lat = 51.208311 Lon = 4.392332
+            l.add(new Cafe(11,"Zuidcafe",3.7,51.209886,4.394763));    //Lat = 51.209886 Lon = 4.394763
+            l.add(new Cafe(12,"Revista",4.2,51.209594,4.394832));     //Lat = 51.209594 Lon = 4.394832
+            l.add(new Cafe(13,"Nick's Cafe",4.2,51.211324,4.390874)); //Lat = 51.211324 Lon = 4.390874
+            l.add(new Cafe(14,"Cafe Local",3.6,51.210660,4.389640));  //Lat = 51.210660 Lon = 4.389640
+            l.add(new Cafe(15,"De Baron",4.1,51.210628,4.397924));    //Lat = 51.210628 Lon = 4.397924
+            l.add(new Cafe(16,"De Nieuwe Linde",4.2,51.206249,4.389700));  //Lat = 51.206249 Lon = 4.389700
+
 
             Bier Stella = new Bier("Stella",2.5);
             Bier Jupiler = new Bier("Jupiler",1.6);

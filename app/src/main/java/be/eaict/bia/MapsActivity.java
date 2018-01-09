@@ -108,14 +108,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
 
         //Place current location marker
-        LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
+      //  LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
         Latitude = location.getLatitude();
         Longitude = location.getLongitude();
-        MarkerOptions markerOptions = new MarkerOptions();
-        markerOptions.position(latLng);
-        markerOptions.title("Current Position");
-        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA));
-        mCurrLocationMarker = mMap.addMarker(markerOptions);
+       // MarkerOptions markerOptions = new MarkerOptions();
+       // markerOptions.position(latLng);
+       // markerOptions.title("Current Position");
+     //   markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA));
+       // mCurrLocationMarker = mMap.addMarker(markerOptions);
 
 
         LatLng locatie = new LatLng(location.getLatitude(),location.getLongitude());
@@ -137,7 +137,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
         //move map camera
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(locatie));
         mMap.animateCamera(CameraUpdateFactory.zoomTo(11));
 
         //stop location updates
