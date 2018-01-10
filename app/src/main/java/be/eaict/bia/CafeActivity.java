@@ -50,6 +50,9 @@ public class CafeActivity extends AppCompatActivity {
                         ((TextView)findViewById(R.id.Rating)).setText("Rating: " + value.getRating());
                         Lat = value.getLatitude();
                         Lon = value.getLongitude();
+                        for(int i = 0;i<value.Lijst.size(); i++) {
+                            ((TextView) findViewById(R.id.beerName)).append(value.getBeerName(i) + "\n");
+                        }
                     }
                 }
                 //((ListView) findViewById(R.id.cafe_list_view)).setAdapter(new CafeAdapter(SearchActivity.this,afspraken));

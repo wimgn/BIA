@@ -28,7 +28,7 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
-        getSupportActionBar().setTitle("Search");
+       // getSupportActionBar().setTitle("Search");
 
         DatabaseReference myRef = database.getReference("Cafes");
 

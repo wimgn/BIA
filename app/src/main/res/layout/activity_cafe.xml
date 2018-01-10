@@ -5,29 +5,78 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="be.eaict.bia.CafeActivity"
-    android:orientation="vertical"
-    android:background="@drawable/donkerachtergrond">
+    android:orientation="vertical">
 
-
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:background="@color/colorPrimary"
+        />
     <Button
         android:background="@mipmap/ic_googlemaps"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="125dp"
+        android:layout_height="100dp"
         android:id="@+id/maps"
         android:onClick="OpenMaps"
         />
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/colorPrimary"
-        android:id="@+id/Naam"/>
+        android:id="@+id/Naam"
+        android:layout_weight="1"/>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/colorPrimary"
-        android:id="@+id/Rating"/>
+        android:id="@+id/Rating"
+        android:layout_weight="1"/>
+</LinearLayout>
+    <!-- Scrollview voor als de lijst van bieren zou zijn. -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:fillViewport="true">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:stretchColumns="1">
+
+            <TableRow>
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dip"
+                    android:layout_marginRight="5dip"
+                    android:layout_marginTop="10dip"
+                    android:tint="#55ff0000" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/beerName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="3dip"/>
+            </TableRow>
+
+        </TableLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/infoCafe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Informatie voor elk cafe zou hier geplaatst worden."/>
 
 
 </LinearLayout>

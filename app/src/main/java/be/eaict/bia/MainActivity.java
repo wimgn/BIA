@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        getSupportActionBar().setTitle("BIA");
+        //getSupportActionBar().setTitle("BIA");
 
         DatabaseReference myRef = database.getReference("Cafes");
 
@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+
                 l = new ArrayList<Cafe>();
 
                 for (DataSnapshot cafe: dataSnapshot.getChildren()) {
@@ -70,14 +71,6 @@ public class MainActivity extends AppCompatActivity {
         // Write a message to the database
 
         DatabaseReference myRef = database.getReference("Cafes");
-
-        /*for (int i = 0; i < 5; i++) {
-            int temp = nextID + i;
-            Cafe c = new Cafe(temp,"De Kroeg " + temp, 4.5,51.219262,4.401123);
-
-           // l.add(new Cafe(17,"Bla bla",4.5));
-
-        }*/
 
         l = new ArrayList<Cafe>();
 
@@ -118,12 +111,16 @@ public class MainActivity extends AppCompatActivity {
             l.get(i).AddBier(Jupiler);
             l.get(i).AddBier(Leffe_Blond);
             l.get(i).AddBier(Leffe_Donker);
+            l.get(i).AddBier(Tripel_Karmeliet);
+            l.get(i).AddBier(Westmalle_Tripel);
+            l.get(i).AddBier(Westmalle_Dubbel);
+            l.get(i).AddBier(Rochefort);
+            l.get(i).AddBier(Chimay_Blauw);
+            l.get(i).AddBier(Chimay_Rood);
+            l.get(i).AddBier(Duvel);
+            l.get(i).AddBier(Kasteelbier_Donker);
             myRef.push().setValue(l.get(i));
         }
-
-
-
-
     }
 
     public void OpenSearch(View v) {

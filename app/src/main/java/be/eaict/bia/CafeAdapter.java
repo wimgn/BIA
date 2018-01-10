@@ -111,6 +111,7 @@ public class CafeAdapter extends ArrayAdapter<Cafe> implements Filterable {
                                 mStringFilterList.get(i).getRating(),
                                 mStringFilterList.get(i).getLatitude(),
                                 mStringFilterList.get(i).getLongitude());
+
                         filterList.add(cafe);
                     }
                 }

@@ -1,6 +1,7 @@
 package be.eaict.bia;
 
 import android.nfc.tech.NfcA;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,6 +38,12 @@ public class Cafe {
 
     public int getID(){
         return id;
+    }
+    private Bier b;
+
+    public String getBeerName(int i){
+        b = Lijst.get(i);
+        return b.getName();
     }
 
     public String getName() {

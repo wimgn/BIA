@@ -62,6 +62,7 @@
             android:text="Help"
             android:layout_weight="1"
             android:alpha="0.8"
+            android:onClick="PushToFirebase"
             />
 
         <TextView

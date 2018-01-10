@@ -14,9 +14,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:iconifiedByDefault="false"
-        android:padding="2dp"
+        android:paddingBottom="2dp"
+        android:paddingTop="2dp"
         android:queryHint="Search...."
-
+        android:background="@color/colorPrimaryDark"
         />
 
     <ListView
