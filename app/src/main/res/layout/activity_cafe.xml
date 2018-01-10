@@ -5,20 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="be.eaict.bia.CafeActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/bierachtergrond"
+    >
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="25dp"
         android:background="@color/colorPrimary"
         />
-    <Button
-        android:background="@mipmap/ic_googlemaps"
-        android:layout_width="125dp"
+    <TextView
+        android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:id="@+id/maps"
-        android:onClick="OpenMaps"
-        />
+        android:layout_margin="20dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Insert picture cafe."/>
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -27,14 +28,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/colorPrimary"
+        android:layout_marginLeft="20dp"
+        android:paddingBottom="10dp"
         android:id="@+id/Naam"
-        android:layout_weight="1"/>
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:layout_weight="2"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/colorPrimary"
+        android:layout_marginRight="20dp"
+        android:paddingBottom="10dp"
         android:id="@+id/Rating"
+        android:textSize="16dp"
+        android:textStyle="bold"
         android:layout_weight="1"/>
 </LinearLayout>
     <!-- Scrollview voor als de lijst van bieren zou zijn. -->
@@ -47,26 +56,26 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:stretchColumns="1">
-
-            <TableRow>
-
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dip"
-                    android:layout_marginRight="5dip"
-                    android:layout_marginTop="10dip"
-                    android:tint="#55ff0000" />
-            </TableRow>
-
             <TableRow>
 
                 <TextView
                     android:id="@+id/beerName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="3dip"/>
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="1"
+                    android:padding="3dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+                <TextView
+                android:id="@+id/beerPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:padding="3dp"
+                android:textColor="@color/colorPrimaryDark"
+                />
             </TableRow>
 
         </TableLayout>
@@ -75,8 +84,25 @@
     <TextView
         android:id="@+id/infoCafe"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Informatie voor elk cafe zou hier geplaatst worden."/>
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:text="Insert information cafe."
+        android:textColor="@color/colorPrimary"
+        android:layout_weight="1"/>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
+
+    <ImageButton
+        android:background="@mipmap/ic_googlemaps"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/maps"
+        android:onClick="OpenMaps"
+        android:layout_centerInParent="true"
+        />
+</RelativeLayout>
 
 </LinearLayout>

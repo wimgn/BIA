@@ -25,45 +25,47 @@
             android:text="Search"
             android:onClick="OpenSearch"
             android:layout_weight="1"
-            android:alpha="0.8"
+            android:alpha="0.7"
+
             />
         <Button
             android:layout_height="wrap_content"
             android:layout_width="180dp"
             android:text="Participating cafes"
-            android:onClick="push"
             android:layout_weight="1"
-            android:alpha="0.8"
+            android:alpha="0.7"
             />
         <Button
             android:layout_height="wrap_content"
             android:layout_width="180dp"
             android:text="Login"
             android:layout_weight="1"
-            android:alpha="0.8"
+            android:alpha="0.7"
             />
         <Button
             android:layout_height="wrap_content"
             android:layout_width="180dp"
             android:text="Register"
             android:layout_weight="1"
-            android:alpha="0.8"
+            android:onClick="push"
+            android:alpha="0.7"
             />
         <Button
             android:layout_height="wrap_content"
             android:layout_width="180dp"
             android:text="Options"
             android:layout_weight="1"
-            android:alpha="0.8"
+            android:alpha="0.7"
             />
         <Button
             android:layout_height="wrap_content"
             android:layout_width="180dp"
             android:text="Help"
             android:layout_weight="1"
-            android:alpha="0.8"
+            android:alpha="0.7"
             android:onClick="PushToFirebase"
             />
+    <!-- OnClick for debugging purpose -->
 
         <TextView
             android:layout_width="wrap_content"

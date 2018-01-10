@@ -46,6 +46,11 @@ public class Cafe {
         return b.getName();
     }
 
+    public Double getPrice (int i){
+        b = Lijst.get(i);
+        return b.getPrice();
+    }
+
     public String getName() {
         return name;
     }

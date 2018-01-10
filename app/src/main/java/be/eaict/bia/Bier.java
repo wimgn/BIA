@@ -19,5 +19,6 @@ public class Bier {
     public Double _prijs;
 
     public String getName (){return _naam;}
+    public Double getPrice (){return _prijs;}
 
 }

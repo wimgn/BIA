@@ -52,6 +52,7 @@ public class CafeActivity extends AppCompatActivity {
                         Lon = value.getLongitude();
                         for(int i = 0;i<value.Lijst.size(); i++) {
                             ((TextView) findViewById(R.id.beerName)).append(value.getBeerName(i) + "\n");
+                            ((TextView) findViewById(R.id.beerPrice)).append(value.getPrice(i) + "\n");
                         }
                     }
                 }
